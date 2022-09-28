@@ -130,12 +130,28 @@
                         showDiapo(conf.urlSlide+'?diapo='+Math.floor(Math.random()*conf.diapos.length));
                     }
                     */
-                    showDiapo(conf.urlSlide+'?diapo='+Math.floor(Math.random()*conf.diapos.length));
 
+                    url =conf.urlSlide+'?diapo='+Math.floor(Math.random()*conf.diapo.length);
+                   let url1, url2, url3;
+                   url1=conf.urlSlide+'?diapo='+Math.floor(Math.random()*conf.diapo.length);
+                   url2=conf.urlSlide+'?diapo='+Math.floor(Math.random()*conf.diapo.length);
+                   url3=conf.urlSlide+'?diapo='+Math.floor(Math.random()*conf.diapo.length);
+
+                    showDiapo(url, url1, url2, url3);
+                    
                 }
-                function showDiapo(url){
+                function showDiapo(url, url1,url2,url3){
                     console.log(url);
                     d3.select('#aleaDiapo').attr('src',url);
+                    d3.select('#hyperlink1').append("a")
+                                            .attr("href",url1)
+                                            .html("Diapo 1");
+                    d3.select('#hyperlink2').append("a")
+                                            .attr("href",url2)
+                                            .html("Diapo 2");
+                   d3.select('#hyperlink3').append("a")
+                                            .attr("href",url3)
+                                            .html("Diapo 3");
                 }
 
             </script>
